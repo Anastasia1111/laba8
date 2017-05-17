@@ -18,7 +18,7 @@ int main()
     printf("Введите количество дней");
     scanf("%d",&date);
     
-    if(checksum||checkdate) return 2;
+    if(checksum(sum)||checkdate(date)) return 2;
     
     if (sum <= 100000) i = 0;
         else i = 1;
