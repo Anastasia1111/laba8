@@ -19,7 +19,7 @@ build/src/deposit.o:
 
 
 
-easytest: build/test/main.o build/test/deposit_test.o
+easytest: build/test/main.o build/test/deposit_test.o 
 	$(CC) build/test/main.o build/test/deposit_test.o -o bin/deposit-calc-test
 	
 build/test/deposit_test.o:
@@ -30,8 +30,9 @@ build/test/main.o:
 
 
 
-validtest: build/test/main.o build/test/validation_test.o
-	$(CC) build/test/main.o build/test/validation_test.o -o bin/validation-test
+
+validtest: build/test/main.o build/test/validation_test.o build/test/deposit.o
+	$(CC) build/test/deposit.o build/test/main.o build/test/validation_test.o -o bin/validation-test
 
 build/test/validation_test.o:
 	$(CC) $(Bibl) -c src/test/validation_test.c -o build/test/validation_test.o
@@ -39,6 +40,8 @@ build/test/validation_test.o:
 build/test/main.o:
 	$(CC) $(Bibl) -c src/test/main.c -o build/test/main.o
 
+build/test/deposit.o:
+	$(CC) $(CFLAGS) -c src/deposit.c -o build/test/deposit.o
 
 	
 .PHONY: clean
