@@ -8,8 +8,6 @@ all: mkdirs exe easytest validtest
 mkdirs:
 	mkdir -p bin build build/src build/test
 
-
-
 exe:  build/src/deposit.o build/src/main.o
 	$(CC) build/src/deposit.o build/src/main.o -o bin/deposit-calc
 

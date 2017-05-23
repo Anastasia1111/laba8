@@ -18,8 +18,7 @@ int main()
     printf("Введите количество дней");
     scanf("%d",&date);
     
-    if(checksum(sum)||checkdate(date)) return 2;
-    
+
     if (sum <= 100000) i = 0;
         else i = 1;
     if (date < 31) j = 0;
@@ -28,7 +27,9 @@ int main()
         else j = 3;
     per = (A[i][j] * date) / 365;
     dep = sum * (1 + per);
-    printf("Депозит = %0.0f\n", dep);
+    if((checksum(sum)&&checkdate(date))) printf("Депозит = %0.0f\n", dep);
+	//else return 666;
+    
 }
 
 
