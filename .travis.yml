@@ -3,3 +3,4 @@ language: c
 script: 
 - make
 - ./bin/validation-test
+- ./bin/deposit-calc-test
