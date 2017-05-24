@@ -2,4 +2,4 @@ language: c
 
 script: 
 - make
-- ./bin/validation_test
+- ./bin/validation-test
