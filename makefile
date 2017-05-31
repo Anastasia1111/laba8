@@ -19,8 +19,8 @@ build/src/deposit.o:
 
 
 
-easytest: build/test/main.o build/test/deposit_test.o 
-	$(CC) build/test/main.o build/test/deposit_test.o -o bin/deposit-calc-test
+easytest: build/test/main.o build/test/deposit_test.o  build/test/deposit.o
+	$(CC) build/test/deposit.o build/test/main.o build/test/deposit_test.o -o bin/deposit-calc-test
 	
 build/test/deposit_test.o:
 	$(CC) $(Bibl) -c test/deposit_test.c -o build/test/deposit_test.o
